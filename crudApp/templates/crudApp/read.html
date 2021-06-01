@@ -1,0 +1,16 @@
+{% extends 'crudApp/index.html' %}
+<!--crudApp/index로 부터 받음-->
+{% block content %}
+<section class="page-section" id="services">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-0">READ</h2>
+        {% for posts in posts.all %}
+        <!-- 여태까지 작성하였던 글 보여줌 -->
+        <p>제목 : <a href="{% url 'detail' posts.id %}">{{ posts.title }}</a></p>
+        <!-- 포스트 제목을 누르면 그 해당 포스트의 detail 페이지로 이동-->
+        <p>작성자 : {{ posts.writer }}</p> <!--글 작성자 불러옴-->
+        <p>작성 일지 및 시간 : {{ posts.pub_date }}</p> <!-- 글 작성 날짜 및 시간 불러옴-->
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

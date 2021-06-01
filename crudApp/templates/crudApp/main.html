@@ -1,0 +1,5 @@
+{% extends 'crudApp/index.html' %}
+<!--crudApp/index로 부터 받음-->
+{% block createButton %}
+<a class="btn btn-primary btn-xl" href="{% url 'create' %}">CREATE</a> <!--create 버튼 누르면 'create'주소로 이동-->
+{% endblock %}
